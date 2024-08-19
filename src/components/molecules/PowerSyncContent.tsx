@@ -41,7 +41,8 @@ function PowerSyncContent() {
                 <PowerSyncConnectivityBadge />
                 <PowerSyncSyncBadge />
             </div>
-            <pre className="text-left mx-auto w-min mt-10">
+            <pre className="text-left mx-auto w-min mt-10 bg-gray-100 p-3">
+                {lists.length === 0 && 'No items found'}
                 {lists.map((i) => JSON.stringify(i, null, 2)).join('\n')}
             </pre>
         </div>
