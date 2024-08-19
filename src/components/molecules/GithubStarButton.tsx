@@ -5,7 +5,7 @@ export default function GithubStarButton() {
     return (
         <Button size="sm" asChild>
             <a
-                href="https://github.com/romatallin/powersync-tauri"
+                href="https://github.com/romatallinn/powersync-tauri"
                 target="_blank"
             >
                 <Star size={16} className="mr-1" /> Star Github
