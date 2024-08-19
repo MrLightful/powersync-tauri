@@ -2,7 +2,7 @@
 
 This template should help get you started developing with [Tauri](https://tauri.app), [React](https://reactjs.org), [Typescript](https://typescriptlang.org), [Shadcn UI](https://ui.shadcn.com) and [PowerSync](https://powersync.com) in [Vite](https://vitejs.dev).
 
-In addition, this template also configures [ESLint](https://eslint.org/) and [Prettier](https://prettier.io/).
+In addition, this template also configures [ESLint](https://eslint.org/), [Prettier](https://prettier.io/), [Husky](https://typicode.github.io/husky/) and [Lint-staged](https://github.com/lint-staged/lint-staged) for pre-commits.
 
 ![Demo Screenshot](./assets/demo.png)
 
