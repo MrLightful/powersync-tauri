@@ -1,18 +1,19 @@
 import { useEffect, useState } from 'react'
 import { usePowerSync, useStatus } from '@powersync/react'
 import { Badge } from '@/components/ui/badge.tsx'
-
-// TODO: Replace with your table name.
-const powersyncTableName = 'projects'
+import {
+    ProjectRecord,
+    PROJECTS_TABLE
+} from '@/components/providers/AppSchema.ts'
 
 function PowerSyncContent() {
     const powerSync = usePowerSync()
-    const [lists, setLists] = useState<unknown[]>([])
+    const [lists, setLists] = useState<ProjectRecord[]>([])
 
     useEffect(() => {
         const abortController = new AbortController()
         powerSync.watch(
-            `SELECT * from ${powersyncTableName}`,
+            `SELECT * FROM ${PROJECTS_TABLE}`,
             [],
             {
                 onResult: (result) => {

@@ -38,10 +38,6 @@ Set `VITE_POWERSYNC_URL` and `VITE_POWERSYNC_TOKEN` to your PowerSync server URL
 
 #### Define your PowerSync schema
 
-Define your PowerSync schema in the [`src/components/providers/AppSchema.ts`](src/components/providers/AppSchema.ts) file. The default schema there is an arbitrary Project schema. You can replace it with your own.
+Define your PowerSync schema in the [`src/components/providers/AppSchema.ts`](src/components/providers/AppSchema.ts) file. The default schema there is an arbitrary Project schema for `projects` table. You can replace it with your own.
 
 For more information, see [PowerSync documentation](https://docs.powersync.com/client-sdk-references/js-web#id-1.-define-the-schema).
-
-#### Define a database table to sync
-
-Define a database table name to sync in the [`src/components/molecules/PowerSyncContent.tsx`](src/components/molecules/PowerSyncContent.tsx) file. The default table name there is `projects`. You can replace it with your own. Or redefine the entire SQL query to your needs.

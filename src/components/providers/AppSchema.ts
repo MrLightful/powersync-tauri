@@ -18,3 +18,6 @@ export const AppSchema = new Schema({
 })
 
 export type Database = (typeof AppSchema)['types']
+
+export const PROJECTS_TABLE = 'projects'
+export type ProjectRecord = Database['projects']
