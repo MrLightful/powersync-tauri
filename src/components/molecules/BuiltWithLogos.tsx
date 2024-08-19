@@ -12,6 +12,9 @@ export default function BuiltWithLogos() {
             <a href="https://reactjs.org" target="_blank">
                 <img src={reactLogo} className="w-10 h-10" alt="React logo" />
             </a>
+            <a href="https://ui.shadcn.com" target="_blank">
+                <img src="/shadcn.svg" className="w-10 h-10" alt="React logo" />
+            </a>
             <a href="https://powersync.com" target="_blank">
                 <img
                     src="/powersync.svg"
