@@ -1,4 +1,4 @@
-# Tauri + React + Typescript + Shadcn UI + PowerSync
+# Tauri + Shadcn UI + PowerSync
 
 This template should help get you started developing with [Tauri](https://tauri.app), [React](https://reactjs.org), [Typescript](https://typescriptlang.org), [Shadcn UI](https://ui.shadcn.com) and [PowerSync](https://powersync.com) in [Vite](https://vitejs.dev).
 
