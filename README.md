@@ -10,6 +10,9 @@ In addition, this template also configures [ESLint](https://eslint.org/), [Prett
 
 ### Basics
 
+#### Tauri
+Ensure that you have the [Tauri prerequisites](https://tauri.app/v1/guides/getting-started/prerequisites) installed.
+
 #### Install dependencies
 
 ```bash
