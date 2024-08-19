@@ -15,13 +15,17 @@ export default function BuiltWithLogos() {
                 <img src={reactLogo} className={logoClass} alt="React logo" />
             </a>
             <a href="https://ui.shadcn.com" target="_blank">
-                <img src="/shadcn.svg" className={logoClass} alt="React logo" />
+                <img
+                    src="/shadcn.svg"
+                    className={logoClass}
+                    alt="Shadcn UI logo"
+                />
             </a>
             <a href="https://powersync.com" target="_blank">
                 <img
                     src="/powersync.svg"
                     className={logoClass}
-                    alt="React logo"
+                    alt="PowerSync logo"
                 />
             </a>
         </div>
