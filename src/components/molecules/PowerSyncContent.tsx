@@ -7,6 +7,7 @@ import {
 } from '@/components/providers/AppSchema.ts'
 
 function PowerSyncContent() {
+    const status = useStatus()
     const powerSync = usePowerSync()
     const [lists, setLists] = useState<ProjectRecord[]>([])
 
@@ -38,29 +39,28 @@ function PowerSyncContent() {
     return (
         <div>
             <div className="mt-4 flex flex-row space-x-2 justify-center">
-                <PowerSyncConnectivityBadge />
-                <PowerSyncSyncBadge />
+                <PowerSyncConnectivityBadge connected={status.connected} />
+                <PowerSyncSyncBadge hasSynced={status.hasSynced} />
             </div>
             <pre className="text-left mx-auto w-min mt-10 bg-gray-100 p-3">
-                {lists.length === 0 && 'No items found'}
+                {!status.hasSynced && lists.length === 0 && 'Syncing...'}
+                {status.hasSynced && lists.length === 0 && 'No items found'}
                 {lists.map((i) => JSON.stringify(i, null, 2)).join('\n')}
             </pre>
         </div>
     )
 }
 
-function PowerSyncConnectivityBadge() {
-    const status = useStatus()
-    if (status.connected) {
+function PowerSyncConnectivityBadge({ connected }: { connected: boolean }) {
+    if (connected) {
         return <Badge className="bg-green-600">Connected</Badge>
     } else {
         return <Badge className="bg-yellow-500">Disconnected</Badge>
     }
 }
 
-function PowerSyncSyncBadge() {
-    const status = useStatus()
-    if (status.hasSynced) {
+function PowerSyncSyncBadge({ hasSynced }: { hasSynced: boolean | undefined }) {
+    if (hasSynced) {
         return <Badge className="bg-green-600">Synced</Badge>
     } else {
         return <Badge className="bg-yellow-500">Syncing...</Badge>
