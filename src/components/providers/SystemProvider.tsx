@@ -20,7 +20,10 @@ const SystemProvider = ({ children }: { children: ReactNode }) => {
             await powerSync.init()
             setDb(powerSync)
         }
-        setup()
+        // TODO: Flaky behavior, need to investigate.
+        //       Learn more: https://github.com/romatallinn/powersync-tauri/issues/4
+        // setup()
+        setTimeout(setup, 1000)
     }, [])
 
     if (!db) {
