@@ -8,9 +8,7 @@ const SystemProvider = ({ children }: { children: ReactNode }) => {
     const [db, setDb] = useState<PowerSyncDatabase | null>(null)
 
     useEffect(() => {
-        // TODO: This timeout is a temporary fix for the issue where PowerSync engine doesn't startup properly.
-        //       Learn more: https://github.com/romatallinn/powersync-tauri/issues/4
-        setTimeout(async () => {
+        const setup = async () => {
             const powerSync = new PowerSyncDatabase({
                 database: { dbFilename: 'powersync2.db' },
                 schema: AppSchema,
@@ -18,10 +16,11 @@ const SystemProvider = ({ children }: { children: ReactNode }) => {
                     disableSSRWarning: true
                 }
             })
+            powerSync.connect(new BackendConnector())
             await powerSync.init()
-            await powerSync.connect(new BackendConnector())
             setDb(powerSync)
-        }, 1000)
+        }
+        setup()
     }, [])
 
     if (!db) {
