@@ -11,6 +11,7 @@ In addition, this template also configures [ESLint](https://eslint.org/), [Prett
 ### Basics
 
 #### Tauri
+
 Ensure that you have the [Tauri prerequisites](https://tauri.app/v1/guides/getting-started/prerequisites) installed.
 
 #### Install dependencies
@@ -28,6 +29,8 @@ pnpm run tauri dev
 ### PowerSync setup
 
 This template is set up to work with PowerSync. PowerSync is a sync layer for building local-first apps with simple state management and real-time reactivity.
+
+Ensure that the PowerSync prerequisites are met: [Configure your source database](https://docs.powersync.com/usage/installation/database-setup) and [Connect PowerSync to your database](https://docs.powersync.com/usage/installation/database-connection).
 
 #### Environment variables
 
