@@ -4,31 +4,26 @@ import { ReactNode, Suspense, useEffect, useState } from 'react'
 import { AppSchema } from '@/components/providers/AppSchema.ts'
 import BackendConnector from '@/lib/BackendConnector.ts'
 
+const powerSync = new PowerSyncDatabase({
+    database: { dbFilename: 'powersync2.db' },
+    schema: AppSchema,
+    flags: {
+        // Web worker causes PowerSync engine fail to start (flaky behaviour).
+        // Learn more: https://github.com/romatallinn/powersync-tauri/issues/4
+        useWebWorker: false
+    }
+})
+const backend = new BackendConnector()
+
 const SystemProvider = ({ children }: { children: ReactNode }) => {
-    const [db, setDb] = useState<PowerSyncDatabase | null>(null)
+    const [db] = useState(powerSync)
+    const [connector] = useState(backend)
 
     useEffect(() => {
-        const setup = async () => {
-            const powerSync = new PowerSyncDatabase({
-                database: { dbFilename: 'powersync2.db' },
-                schema: AppSchema,
-                flags: {
-                    disableSSRWarning: true
-                }
-            })
-            powerSync.connect(new BackendConnector())
-            await powerSync.init()
-            setDb(powerSync)
-        }
-        // TODO: Flaky behavior, need to investigate.
-        //       Learn more: https://github.com/romatallinn/powersync-tauri/issues/4
-        // setup()
-        setTimeout(setup, 1000)
-    }, [])
+        powerSync.init()
+        powerSync.connect(connector)
+    }, [db, connector])
 
-    if (!db) {
-        return <>Loading...</>
-    }
     return (
         <Suspense fallback={<>Loading...</>}>
             <PowerSyncContext.Provider value={db}>
