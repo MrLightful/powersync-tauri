@@ -1,9 +1,9 @@
 import './global.css'
-import { SystemProvider } from '@/components/providers/SystemProvider.tsx'
-import { PowerSyncContent } from '@/components/molecules/PowerSyncContent.tsx'
-import BuiltWithLogos from '@/components/molecules/BuiltWithLogos.tsx'
-import GithubStarButton from '@/components/molecules/GithubStarButton.tsx'
-import { TooltipProvider } from './components/ui/tooltip'
+import { SystemProvider } from '@/components/providers/SystemProvider'
+import { PowerSyncContent } from '@/components/molecules/PowerSyncContent'
+import BuiltWithLogos from '@/components/molecules/BuiltWithLogos'
+import GithubStarButton from '@/components/molecules/GithubStarButton'
+import { TooltipProvider } from '@/components/ui/tooltip'
 
 function App() {
     return (
