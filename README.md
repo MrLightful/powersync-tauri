@@ -4,6 +4,8 @@ This template should help get you started developing with [Tauri](https://tauri.
 
 In addition, this template also configures [ESLint](https://eslint.org/), [Prettier](https://prettier.io/), [Husky](https://typicode.github.io/husky/) and [Lint-staged](https://github.com/lint-staged/lint-staged) for pre-commits.
 
+[**Version without PowerSync**](https://github.com/MrLightful/create-tauri-core).
+
 ![Demo Screenshot](./assets/demo.png)
 
 ## Getting Started

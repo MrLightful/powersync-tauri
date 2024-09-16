@@ -1,7 +1,21 @@
 {
     "name": "powersync-tauri",
-    "private": true,
-    "version": "0.1.0",
+    "description": "A project template for creating a Tauri app with Vite, React, Tailwind CSS, and PowerSync.",
+    "keywords": [
+        "tauri",
+        "vite",
+        "react",
+        "tailwindcss",
+        "powersync",
+        "ui",
+        "desktop"
+    ],
+    "version": "1.0.0",
+    "author": {
+        "name": "MrLightful",
+        "url": "https://mrlightful.com"
+    },
+    "license": "MIT",
     "type": "module",
     "scripts": {
         "dev": "vite",
