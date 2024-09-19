@@ -12,11 +12,11 @@ importers:
         specifier: ^0.3.0
         version: 0.3.0
       '@powersync/react':
-        specifier: ^1.4.1
-        version: 1.4.1(@powersync/common@1.16.1)(react@18.3.1)
+        specifier: ^1.4.2
+        version: 1.4.2(@powersync/common@1.16.1)(react@18.3.1)
       '@powersync/web':
-        specifier: ^1.7.0
-        version: 1.7.0(@journeyapps/wa-sqlite@0.3.0)(@powersync/common@1.16.1)
+        specifier: ^1.8.0
+        version: 1.8.0(@journeyapps/wa-sqlite@0.3.0)(@powersync/common@1.16.1)
       '@radix-ui/react-slot':
         specifier: ^1.1.0
         version: 1.1.0(@types/react@18.3.7)(react@18.3.1)
@@ -448,17 +448,17 @@ packages:
   '@powersync/common@1.16.1':
     resolution: {integrity: sha512-IdNn/4wnOK3ZH0WNi6N44rr48qDIcIJs1XKLBdGC5wG7F6USsd4LtMbVctjNePV9FwrhdNBTu9JlL2hWKpFSwQ==}
 
-  '@powersync/react@1.4.1':
-    resolution: {integrity: sha512-cwhdj8YB4s486EukQmDh3HcKK1Gio5YN0N2pj5qczXf/hDbIgnPk09PFE03nUCJJiDR7JDdX38FX9cYV1Fse4Q==}
+  '@powersync/react@1.4.2':
+    resolution: {integrity: sha512-DJcPZuSG8tKGSZgWSLPMf7HF2qgec7b71wH8EL3JhXS5ZWnnuonm76wS6idQ3Yz12rePWel+UZAR30AEV1ZM0g==}
     peerDependencies:
-      '@powersync/common': ^1.17.0
+      '@powersync/common': ^1.18.0
       react: '*'
 
-  '@powersync/web@1.7.0':
-    resolution: {integrity: sha512-uxl6wDl+dpzkXgbxvcOI62i2UgmHa9av8EDQERCsmdZ8x7CIC53zDGy+jJBIRyon/KboCUNTksKQHXPaqTBZFQ==}
+  '@powersync/web@1.8.0':
+    resolution: {integrity: sha512-aJO+N/0M5/8bJ7xdlxCbvpc+fH/dPXRDUx+nYRi8hNmlmY7Z11cMFiRQs9v6y7A9pN3ZTelU5s3LDVXvGUgvWA==}
     peerDependencies:
       '@journeyapps/wa-sqlite': ^0.3.0
-      '@powersync/common': ^1.17.0
+      '@powersync/common': ^1.18.0
 
   '@radix-ui/primitive@1.1.0':
     resolution: {integrity: sha512-4Z8dn6Upk0qk4P74xBhZ6Hd/w0mPEzOOLxy4xiPXOXqjF7jZS0VAKk7/x/H6FyY2zCkYJqePf1G5KmkmNJ4RBA==}
@@ -1748,9 +1748,6 @@ packages:
   lodash.merge@4.6.2:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
 
-  lodash@4.17.21:
-    resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
-
   log-update@6.1.0:
     resolution: {integrity: sha512-9ie8ItPR6tjY5uYJh8K/Zrv/RMZ5VOlOWvtZdEHYSTFKZfIBPQa9tOAEeAWhd+AnIneLJ22w5fjOYtoutpWq5w==}
     engines: {node: '>=18'}
@@ -2684,12 +2681,12 @@ snapshots:
     dependencies:
       js-logger: 1.6.1
 
-  '@powersync/react@1.4.1(@powersync/common@1.16.1)(react@18.3.1)':
+  '@powersync/react@1.4.2(@powersync/common@1.16.1)(react@18.3.1)':
     dependencies:
       '@powersync/common': 1.16.1
       react: 18.3.1
 
-  '@powersync/web@1.7.0(@journeyapps/wa-sqlite@0.3.0)(@powersync/common@1.16.1)':
+  '@powersync/web@1.8.0(@journeyapps/wa-sqlite@0.3.0)(@powersync/common@1.16.1)':
     dependencies:
       '@journeyapps/wa-sqlite': 0.3.0
       '@powersync/common': 1.16.1
@@ -2697,7 +2694,6 @@ snapshots:
       bson: 6.8.0
       comlink: 4.4.1
       js-logger: 1.6.1
-      lodash: 4.17.21
 
   '@radix-ui/primitive@1.1.0': {}
 
@@ -4023,8 +4019,6 @@ snapshots:
       p-locate: 5.0.0
 
   lodash.merge@4.6.2: {}
-
-  lodash@4.17.21: {}
 
   log-update@6.1.0:
     dependencies:
