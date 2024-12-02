@@ -9,14 +9,14 @@ importers:
   .:
     dependencies:
       '@journeyapps/wa-sqlite':
-        specifier: ^0.4.1
-        version: 0.4.1
+        specifier: ^1.0.0
+        version: 1.0.0
       '@powersync/react':
         specifier: ^1.5.1
         version: 1.5.1(@powersync/common@1.16.1)(react@18.3.1)
       '@powersync/web':
         specifier: ^1.12.0
-        version: 1.12.0(@journeyapps/wa-sqlite@0.4.1)(@powersync/common@1.16.1)
+        version: 1.12.0(@journeyapps/wa-sqlite@1.0.0)(@powersync/common@1.16.1)
       '@radix-ui/react-slot':
         specifier: ^1.1.0
         version: 1.1.0(@types/react@18.3.12)(react@18.3.1)
@@ -412,8 +412,8 @@ packages:
     resolution: {integrity: sha512-O8jcjabXaleOG9DQ0+ARXWZBTfnP4WNAqzuiJK7ll44AmxGKv/J2M4TPjxjY3znBCfvBXFzucm1twdyFybFqEA==}
     engines: {node: '>=12'}
 
-  '@journeyapps/wa-sqlite@0.4.1':
-    resolution: {integrity: sha512-a964h8f+6PSVfg3kxhLF2FwAqPdlY4gaWYIV6nnwJbdUhfjUcHDdL5njkw7egwmjEIG9rbIuxRsEqANcQ/bTwQ==}
+  '@journeyapps/wa-sqlite@1.0.0':
+    resolution: {integrity: sha512-Quz3LhWHqTXK061RBx7Txq0JzIm0+jgtRV+94qoddw/mLbZDZQmi1dZvPu7IqO+1mpBqce3LbDrytWhp1GhGcA==}
 
   '@jridgewell/gen-mapping@0.3.5':
     resolution: {integrity: sha512-IzL8ZoEDIBRWEzlCcRhOaCupYyN5gdIK+Q6fbFdPDg6HqX6jpkItn7DFIpW9LQzXG6Df9sA7+OKnq0qlz/GaQg==}
@@ -2651,7 +2651,7 @@ snapshots:
       wrap-ansi: 8.1.0
       wrap-ansi-cjs: wrap-ansi@7.0.0
 
-  '@journeyapps/wa-sqlite@0.4.1': {}
+  '@journeyapps/wa-sqlite@1.0.0': {}
 
   '@jridgewell/gen-mapping@0.3.5':
     dependencies:
@@ -2694,9 +2694,9 @@ snapshots:
       '@powersync/common': 1.16.1
       react: 18.3.1
 
-  '@powersync/web@1.12.0(@journeyapps/wa-sqlite@0.4.1)(@powersync/common@1.16.1)':
+  '@powersync/web@1.12.0(@journeyapps/wa-sqlite@1.0.0)(@powersync/common@1.16.1)':
     dependencies:
-      '@journeyapps/wa-sqlite': 0.4.1
+      '@journeyapps/wa-sqlite': 1.0.0
       '@powersync/common': 1.16.1
       async-mutex: 0.4.1
       bson: 6.10.0
