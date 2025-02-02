@@ -4,7 +4,7 @@ import { Badge } from '@/components/ui/badge.tsx'
 import {
     ProjectRecord,
     PROJECTS_TABLE
-} from '@/components/providers/AppSchema.ts'
+} from '@/features/providers/AppSchema.ts'
 
 function PowerSyncContent() {
     const status = useStatus()

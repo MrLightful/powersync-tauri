@@ -1,14 +1,14 @@
-import reactLogo from '@/components/molecules/BuiltWithLogos/assets/react.svg'
-import viteLogo from '@/components/molecules/BuiltWithLogos/assets/vite.svg'
-import tauriLogo from '@/components/molecules/BuiltWithLogos/assets/tauri.svg'
-import shadcnLogo from '@/components/molecules/BuiltWithLogos/assets/shadcn.svg'
-import powersyncLogo from '@/components/molecules/BuiltWithLogos/assets/powersync.svg'
+import reactLogo from '@/features/BuiltWithLogos/assets/react.svg'
+import viteLogo from '@/features/BuiltWithLogos/assets/vite.svg'
+import tauriLogo from '@/features/BuiltWithLogos/assets/tauri.svg'
+import shadcnLogo from '@/features/BuiltWithLogos/assets/shadcn.svg'
+import powersyncLogo from '@/features/BuiltWithLogos/assets/powersync.svg'
 
 import {
     Tooltip,
     TooltipContent,
     TooltipTrigger
-} from '@/components/ui/tooltip'
+} from '@/components/ui/tooltip.tsx'
 
 export default function BuiltWithLogos() {
     return (
