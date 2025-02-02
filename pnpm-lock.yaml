@@ -10,12 +10,15 @@ importers:
             '@journeyapps/wa-sqlite':
                 specifier: ^1.2.0
                 version: 1.2.0
+            '@powersync/common':
+                specifier: ^1.23.0
+                version: 1.23.0
             '@powersync/react':
                 specifier: ^1.5.1
-                version: 1.5.1(@powersync/common@1.16.1)(react@19.0.0)
+                version: 1.5.1(@powersync/common@1.23.0)(react@19.0.0)
             '@powersync/web':
                 specifier: ^1.13.1
-                version: 1.13.1(@journeyapps/wa-sqlite@1.2.0)(@powersync/common@1.16.1)
+                version: 1.13.1(@journeyapps/wa-sqlite@1.2.0)(@powersync/common@1.23.0)
             '@radix-ui/react-slot':
                 specifier: ^1.1.1
                 version: 1.1.1(@types/react@19.0.8)(react@19.0.0)
@@ -667,10 +670,10 @@ packages:
             }
         engines: { node: '>= 8' }
 
-    '@powersync/common@1.16.1':
+    '@powersync/common@1.23.0':
         resolution:
             {
-                integrity: sha512-IdNn/4wnOK3ZH0WNi6N44rr48qDIcIJs1XKLBdGC5wG7F6USsd4LtMbVctjNePV9FwrhdNBTu9JlL2hWKpFSwQ==
+                integrity: sha512-TBMbU+VCiPgzHOa9Is72e2Ex/+hOu9/D1UsQ5/SwmSDbTnnZO21wtlFkmeYJHc0aTD/CGMc5OrqOS65WuGpiwA==
             }
 
     '@powersync/react@1.5.1':
@@ -4067,19 +4070,19 @@ snapshots:
             '@nodelib/fs.scandir': 2.1.5
             fastq: 1.19.0
 
-    '@powersync/common@1.16.1':
+    '@powersync/common@1.23.0':
         dependencies:
             js-logger: 1.6.1
 
-    '@powersync/react@1.5.1(@powersync/common@1.16.1)(react@19.0.0)':
+    '@powersync/react@1.5.1(@powersync/common@1.23.0)(react@19.0.0)':
         dependencies:
-            '@powersync/common': 1.16.1
+            '@powersync/common': 1.23.0
             react: 19.0.0
 
-    '@powersync/web@1.13.1(@journeyapps/wa-sqlite@1.2.0)(@powersync/common@1.16.1)':
+    '@powersync/web@1.13.1(@journeyapps/wa-sqlite@1.2.0)(@powersync/common@1.23.0)':
         dependencies:
             '@journeyapps/wa-sqlite': 1.2.0
-            '@powersync/common': 1.16.1
+            '@powersync/common': 1.23.0
             async-mutex: 0.4.1
             bson: 6.10.2
             comlink: 4.4.2

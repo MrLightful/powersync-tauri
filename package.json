@@ -31,6 +31,7 @@
     },
     "dependencies": {
         "@journeyapps/wa-sqlite": "^1.2.0",
+        "@powersync/common": "^1.23.0",
         "@powersync/react": "^1.5.1",
         "@powersync/web": "^1.13.1",
         "@radix-ui/react-slot": "^1.1.1",
