@@ -29,7 +29,7 @@ importers:
                 specifier: ^2.5.0
                 version: 2.5.0
             '@tauri-apps/plugin-shell':
-                specifier: ~2.2.1
+                specifier: ^2.2.1
                 version: 2.2.1
             class-variance-authority:
                 specifier: ^0.7.1
