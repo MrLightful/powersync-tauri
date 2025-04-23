@@ -1,0 +1,4 @@
+onlyBuiltDependencies:
+    - '@journeyapps/wa-sqlite'
+    - '@swc/core'
+    - esbuild
