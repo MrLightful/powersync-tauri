@@ -1,11 +1,12 @@
 import { PowerSyncContext } from '@powersync/react'
 import { PowerSyncDatabase } from '@powersync/web'
-import { ReactNode, Suspense, useEffect, useState } from 'react'
-import { AppSchema } from '@/features/providers/AppSchema.ts'
-import BackendConnector from '@/lib/BackendConnector.ts'
+import { ReactNode, useEffect, useState } from 'react'
+import { AppSchema } from '@/hooks/powersync/app-schema.ts'
+import BackendConnector from '@/hooks/powersync/backend-connector.ts'
+import env from '@/config/env.ts'
 
 const powerSync = new PowerSyncDatabase({
-    database: { dbFilename: 'powersync2.db' },
+    database: { dbFilename: 'powersync.db' },
     schema: AppSchema,
     flags: {
         // Web worker causes PowerSync engine fail to start (flaky behaviour).
@@ -13,9 +14,9 @@ const powerSync = new PowerSyncDatabase({
         useWebWorker: false
     }
 })
-const backend = new BackendConnector()
+const backend = new BackendConnector(env.POWERSYNC_URL, env.POWERSYNC_TOKEN)
 
-const SystemProvider = ({ children }: { children: ReactNode }) => {
+const PowerSyncProvider = ({ children }: { children: ReactNode }) => {
     const [db] = useState(powerSync)
     const [connector] = useState(backend)
 
@@ -25,12 +26,10 @@ const SystemProvider = ({ children }: { children: ReactNode }) => {
     }, [db, connector])
 
     return (
-        <Suspense fallback={<>Loading...</>}>
-            <PowerSyncContext.Provider value={db}>
-                {children}
-            </PowerSyncContext.Provider>
-        </Suspense>
+        <PowerSyncContext.Provider value={db}>
+            {children}
+        </PowerSyncContext.Provider>
     )
 }
 
-export { SystemProvider }
+export { PowerSyncProvider }

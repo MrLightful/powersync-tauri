@@ -1,10 +1,9 @@
-import { column, Schema, TableV2 } from '@powersync/web'
+import { column, Schema, Table } from '@powersync/web'
 
 // TODO: Define your database schema here.
 //       For more information, see https://docs.powersync.com/client-sdk-references/js-web#id-1.-define-the-schema
-const projects = new TableV2(
+const projects = new Table(
     {
-        // id column (text) is automatically included
         created_at: column.text,
         name: column.text,
         slug: column.text,

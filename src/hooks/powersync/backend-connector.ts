@@ -4,13 +4,10 @@ import {
 } from '@powersync/web'
 
 export default class BackendConnector implements PowerSyncBackendConnector {
-    private powersyncUrl: string | undefined
-    private powersyncToken: string | undefined
-
-    constructor() {
-        this.powersyncUrl = import.meta.env.VITE_POWERSYNC_URL
-        this.powersyncToken = import.meta.env.VITE_POWERSYNC_TOKEN
-    }
+    constructor(
+        private readonly powersyncUrl: string | undefined,
+        private readonly powersyncToken: string | undefined
+    ) {}
 
     async fetchCredentials() {
         // TODO: Use an authentication service or custom implementation here.

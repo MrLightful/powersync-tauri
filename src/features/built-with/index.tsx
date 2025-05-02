@@ -1,16 +1,16 @@
-import reactLogo from '@/features/BuiltWithLogos/assets/react.svg'
-import viteLogo from '@/features/BuiltWithLogos/assets/vite.svg'
-import tauriLogo from '@/features/BuiltWithLogos/assets/tauri.svg'
-import shadcnLogo from '@/features/BuiltWithLogos/assets/shadcn.svg'
-import powersyncLogo from '@/features/BuiltWithLogos/assets/powersync.svg'
+import reactLogo from '@/features/built-with/assets/react.svg'
+import viteLogo from '@/features/built-with/assets/vite.svg'
+import tauriLogo from '@/features/built-with/assets/tauri.svg'
+import shadcnLogo from '@/features/built-with/assets/shadcn.svg'
+import powersyncLogo from '@/features/built-with/assets/powersync.svg'
 
 import {
     Tooltip,
     TooltipContent,
     TooltipTrigger
-} from '@/components/ui/tooltip.tsx'
+} from '@/components/ui/tooltip'
 
-export default function BuiltWithLogos() {
+export default function BuiltWith() {
     return (
         <div className="flex flex-row justify-center">
             <LogoLink href="https://vitejs.dev" src={viteLogo} alt="Vite" />
