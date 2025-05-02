@@ -36,6 +36,7 @@
         "@powersync/web": "^1.18.0",
         "@radix-ui/react-slot": "^1.2.0",
         "@radix-ui/react-tooltip": "^1.2.4",
+        "@tailwindcss/vite": "^4.1.5",
         "@tauri-apps/api": "^2.5.0",
         "@tauri-apps/plugin-shell": "^2.2.1",
         "class-variance-authority": "^0.7.1",
@@ -48,7 +49,6 @@
     },
     "devDependencies": {
         "@eslint/js": "^9.25.1",
-        "@tailwindcss/postcss": "^4.1.4",
         "@tauri-apps/cli": "^2.5.0",
         "@types/node": "^22.14.1",
         "@types/react": "^19.1.2",
@@ -60,7 +60,6 @@
         "globals": "^16.0.0",
         "husky": "^9.1.7",
         "lint-staged": "^15.5.1",
-        "postcss": "^8.5.3",
         "prettier": "3.5.3",
         "tailwindcss": "^4.1.4",
         "typescript": "^5.8.3",

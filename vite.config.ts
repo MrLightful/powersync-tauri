@@ -3,10 +3,11 @@ import react from '@vitejs/plugin-react'
 import topLevelAwait from 'vite-plugin-top-level-await'
 import wasm from 'vite-plugin-wasm'
 import { defineConfig } from 'vite'
+import tailwindcss from '@tailwindcss/vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-    plugins: [react(), wasm(), topLevelAwait()],
+    plugins: [react(), tailwindcss(), wasm(), topLevelAwait()],
 
     // Vite options tailored for Tauri development and only applied in `tauri dev` or `tauri build`
     //
