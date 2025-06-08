@@ -1,8 +1,8 @@
 import { PowerSyncContext } from '@powersync/react'
 import { PowerSyncDatabase } from '@powersync/web'
 import { ReactNode, useEffect, useState } from 'react'
-import { AppSchema } from '@/hooks/powersync/app-schema.ts'
-import BackendConnector from '@/hooks/powersync/backend-connector.ts'
+import { AppSchema } from '@/lib/powersync/app-schema.ts'
+import BackendConnector from '@/lib/powersync/backend-connector.ts'
 import env from '@/config/env.ts'
 
 const powerSync = new PowerSyncDatabase({

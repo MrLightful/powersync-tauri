@@ -1,4 +1,4 @@
-import { PowerSyncProvider } from '@/hooks/powersync/powersync-provider.tsx'
+import { PowerSyncProvider } from '@/lib/powersync/powersync-provider.tsx'
 import { ReactNode, Suspense } from 'react'
 import { TooltipProvider } from '@radix-ui/react-tooltip'
 import AppErrorPage from '@/features/errors/app-error.tsx'

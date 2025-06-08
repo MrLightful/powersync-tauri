@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { usePowerSync, useStatus } from '@powersync/react'
 import { Badge } from '@/components/ui/badge'
-import { ProjectRecord, PROJECTS_TABLE } from '@/hooks/powersync/app-schema.ts'
+import { ProjectRecord, PROJECTS_TABLE } from '@/lib/powersync/app-schema.ts'
 
 function PowerSyncContent() {
     const status = useStatus()

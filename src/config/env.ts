@@ -1,5 +1,5 @@
 import { z } from 'zod'
-import { createEnv } from '@/lib/create-env'
+import { createEnv } from '@/lib/utils'
 
 const EnvSchema = z.object({
     POWERSYNC_URL: z.string(),
