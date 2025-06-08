@@ -1,4 +1,5 @@
 onlyBuiltDependencies:
     - '@journeyapps/wa-sqlite'
     - '@swc/core'
+    - '@tailwindcss/oxide'
     - esbuild
