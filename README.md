@@ -1,6 +1,8 @@
 # Tauri + Shadcn UI + PowerSync
 
-This template should help get you started developing with [Tauri](https://tauri.app), [React](https://reactjs.org), [Typescript](https://typescriptlang.org), [Shadcn UI](https://ui.shadcn.com) and [PowerSync](https://powersync.com) in [Vite](https://vitejs.dev).
+This template should help get you started developing with [Vite](https://vitejs.dev), [Tauri](https://tauri.app), [React](https://reactjs.org), [Typescript](https://typescriptlang.org), [Shadcn UI](https://ui.shadcn.com), and [PowerSync](https://powersync.com).
+
+[PowerSync](https://powersync.com) is a sync layer for building local-first apps with simple state management and real-time reactivity.
 
 The architecture is based on practices suggested by [@alan2207](https://github.com/alan2207) in his [bulletproof-react](https://github.com/alan2207/bulletproof-react/blob/master/docs/project-structure.md).
 
