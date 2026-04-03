@@ -1,67 +1,68 @@
-import { useEffect, useState } from 'react'
-import { usePowerSync, useStatus } from '@powersync/react'
-import { Badge } from '@/components/ui/badge'
-import { ProjectRecord, PROJECTS_TABLE } from '@/lib/powersync/app-schema.ts'
+import { usePowerSync, useStatus } from "@powersync/react";
+import { useEffect, useState } from "react";
+import { Badge } from "@/components/ui/badge";
+import {
+  PROJECTS_TABLE,
+  type ProjectRecord,
+} from "@/lib/powersync/app-schema.ts";
 
 function PowerSyncContent() {
-    const status = useStatus()
-    const powerSync = usePowerSync()
-    const [lists, setLists] = useState<ProjectRecord[]>([])
+  const status = useStatus();
+  const powerSync = usePowerSync();
+  const [lists, setLists] = useState<ProjectRecord[]>([]);
 
-    useEffect(() => {
-        const abortController = new AbortController()
-        powerSync.watch(
-            `SELECT * FROM ${PROJECTS_TABLE}`,
-            [],
-            {
-                onResult: (result) => {
-                    if (!result.rows) {
-                        setLists([])
-                    } else {
-                        const l = result.rows!.length
-                        const items = Array.from({ length: l }, (_, i) =>
-                            result.rows!.item(i)
-                        )
-                        setLists(items)
-                    }
-                }
-            },
-            { signal: abortController.signal }
-        )
-        return () => {
-            abortController.abort()
-        }
-    }, [])
+  useEffect(() => {
+    const abortController = new AbortController();
+    powerSync.watch(
+      `SELECT * FROM ${PROJECTS_TABLE}`,
+      [],
+      {
+        onResult: (result) => {
+          if (result.rows) {
+            const l = result.rows?.length;
+            const items = Array.from({ length: l }, (_, i) =>
+              result.rows?.item(i)
+            );
+            setLists(items);
+          } else {
+            setLists([]);
+          }
+        },
+      },
+      { signal: abortController.signal }
+    );
+    return () => {
+      abortController.abort();
+    };
+  }, [powerSync.watch]);
 
-    return (
-        <div>
-            <div className="mt-4 flex flex-row space-x-2 justify-center">
-                <PowerSyncConnectivityBadge connected={status.connected} />
-                <PowerSyncSyncBadge hasSynced={status.hasSynced} />
-            </div>
-            <pre className="text-left mx-auto w-min mt-10 bg-gray-100 p-3">
-                {!status.hasSynced && lists.length === 0 && 'Syncing...'}
-                {status.hasSynced && lists.length === 0 && 'No items found'}
-                {lists.map((i) => JSON.stringify(i, null, 2)).join('\n')}
-            </pre>
-        </div>
-    )
+  return (
+    <div>
+      <div className="mt-4 flex flex-row justify-center space-x-2">
+        <PowerSyncConnectivityBadge connected={status.connected} />
+        <PowerSyncSyncBadge hasSynced={status.hasSynced} />
+      </div>
+      <pre className="mx-auto mt-10 w-min bg-gray-100 p-3 text-left">
+        {!status.hasSynced && lists.length === 0 && "Syncing..."}
+        {status.hasSynced && lists.length === 0 && "No items found"}
+        {lists.map((i) => JSON.stringify(i, null, 2)).join("\n")}
+      </pre>
+    </div>
+  );
 }
 
 function PowerSyncConnectivityBadge({ connected }: { connected: boolean }) {
-    if (connected) {
-        return <Badge className="bg-green-600">Connected</Badge>
-    } else {
-        return <Badge className="bg-yellow-500">Disconnected</Badge>
-    }
+  if (connected) {
+    return <Badge className="bg-green-600">Connected</Badge>;
+  }
+  return <Badge className="bg-yellow-500">Disconnected</Badge>;
 }
 
 function PowerSyncSyncBadge({ hasSynced }: { hasSynced: boolean | undefined }) {
-    if (hasSynced) {
-        return <Badge className="bg-green-600">Synced</Badge>
-    } else {
-        return <Badge className="bg-yellow-500">Syncing...</Badge>
-    }
+  if (hasSynced) {
+    return <Badge className="bg-green-600">Synced</Badge>;
+  }
+  return <Badge className="bg-yellow-500">Syncing...</Badge>;
 }
 
-export { PowerSyncContent }
+export { PowerSyncContent };
