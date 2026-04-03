@@ -68,7 +68,13 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,json,jsonc,css,scss,md,mdx}": [
-      "pnpm dlx ultracite fix"
+      "bunx ultracite fix"
     ]
-  }
+  },
+  "trustedDependencies": [
+    "@journeyapps/wa-sqlite",
+    "@swc/core",
+    "@tailwindcss/oxide",
+    "esbuild"
+  ]
 }

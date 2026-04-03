@@ -21,13 +21,13 @@ Ensure that you have the [Tauri prerequisites](https://tauri.app/v1/guides/getti
 #### Install dependencies
 
 ```bash
-pnpm install
+bun install
 ```
 
 #### Start the development server
 
 ```bash
-pnpm run tauri dev
+bun tauri dev
 ```
 
 ### PowerSync setup
@@ -51,6 +51,34 @@ Set `VITE_POWERSYNC_URL` and `VITE_POWERSYNC_TOKEN` to your PowerSync server URL
 Define your PowerSync schema in the [`src/features/providers/AppSchema.ts`](src/hooks/powersync/app-schema.ts) file. The default schema there is an arbitrary Project schema for `projects` table. You can replace it with your own.
 
 For more information, see [PowerSync documentation](https://docs.powersync.com/client-sdk-references/js-web#id-1.-define-the-schema).
+
+## Using a Different Package Manager
+
+This project uses [bun](https://bun.sh) by default. To use a different package manager (npm, pnpm, yarn, etc.), update the following:
+
+1. **`src-tauri/tauri.conf.json`** — Replace the `beforeDevCommand` and `beforeBuildCommand`:
+   ```jsonc
+   // For npm/yarn/pnpm:
+   "beforeDevCommand": "<pm> run dev",
+   "beforeBuildCommand": "<pm> run build",
+   ```
+2. **`.husky/pre-commit`** — Replace `bunx` with your package manager's equivalent:
+   ```sh
+   npx lint-staged        # npm
+   pnpm dlx lint-staged   # pnpm
+   yarn dlx lint-staged   # yarn
+   ```
+3. **`package.json`** — Update the `lint-staged` command:
+   ```jsonc
+   "lint-staged": {
+     "*.{js,jsx,ts,tsx,json,jsonc,css,scss,md,mdx}": [
+       "npx ultracite fix"        // npm
+       // "pnpm dlx ultracite fix" // pnpm
+       // "yarn dlx ultracite fix" // yarn
+     ]
+   }
+   ```
+4. Delete `bun.lock` and run your package manager's install command to generate a new lock file.
 
 ## What's included
 
