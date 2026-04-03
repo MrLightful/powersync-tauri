@@ -6,8 +6,6 @@ This template should help get you started developing with [Vite](https://vitejs.
 
 The architecture is based on practices suggested by [@alan2207](https://github.com/alan2207) in his [bulletproof-react](https://github.com/alan2207/bulletproof-react/blob/master/docs/project-structure.md).
 
-In addition, this template also configures [ESLint](https://eslint.org/), [Prettier](https://prettier.io/), [Husky](https://typicode.github.io/husky/) and [Lint-staged](https://github.com/lint-staged/lint-staged) for pre-commits.
-
 [**Version without PowerSync**](https://github.com/MrLightful/create-tauri-core).
 
 ![Demo Screenshot](./assets/demo.png)
@@ -63,20 +61,6 @@ A basic Tauri setup with Vite, React, Typescript.
 #### Tailwind CSS
 
 A basic Tailwind CSS setup. Includes a `components.json` for Shadcn UI components.
-
-### Dev Tools
-
-#### Eslint 9
-
-A new Eslint 9 setup with flat config. This will help you to keep your code clean and consistent.
-
-#### Prettier
-
-A basic Prettier setup to keep your code formatted.
-
-#### Husky + Lint-staged
-
-Pre-commit hooks to run Eslint and Prettier on staged files.
 
 ## How to use?
 
