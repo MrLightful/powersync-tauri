@@ -1,4 +1,4 @@
-import { column, Schema, Table } from "@powersync/web";
+import { column, Schema, Table } from "@powersync/common";
 
 // TODO: Define your database schema here.
 //       For more information, see https://docs.powersync.com/client-sdk-references/js-web#id-1.-define-the-schema

@@ -40,11 +40,10 @@ function PowerSyncContent() {
     <div>
       <div className="mt-4 flex flex-row justify-center space-x-2">
         <PowerSyncConnectivityBadge connected={status.connected} />
-        <PowerSyncSyncBadge hasSynced={status.hasSynced} />
       </div>
       <pre className="mx-auto mt-10 w-min bg-gray-100 p-3 text-left">
-        {!status.hasSynced && lists.length === 0 && "Syncing..."}
-        {status.hasSynced && lists.length === 0 && "No items found"}
+        {!status.connected && lists.length === 0 && "Connecting..."}
+        {status.connected && lists.length === 0 && "No items found"}
         {lists.map((i) => JSON.stringify(i, null, 2)).join("\n")}
       </pre>
     </div>
@@ -56,13 +55,6 @@ function PowerSyncConnectivityBadge({ connected }: { connected: boolean }) {
     return <Badge className="bg-green-600">Connected</Badge>;
   }
   return <Badge className="bg-yellow-500">Disconnected</Badge>;
-}
-
-function PowerSyncSyncBadge({ hasSynced }: { hasSynced: boolean | undefined }) {
-  if (hasSynced) {
-    return <Badge className="bg-green-600">Synced</Badge>;
-  }
-  return <Badge className="bg-yellow-500">Syncing...</Badge>;
 }
 
 export { PowerSyncContent };

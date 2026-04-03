@@ -1,29 +1,34 @@
 import { PowerSyncContext } from "@powersync/react";
-import { PowerSyncDatabase } from "@powersync/web";
+import { PowerSyncTauriDatabase } from "@powersync/tauri-plugin";
+import { invoke } from "@tauri-apps/api/core";
+import { appDataDir } from "@tauri-apps/api/path";
 import { type ReactNode, useEffect, useState } from "react";
 import env from "@/config/env.ts";
 import { AppSchema } from "@/lib/powersync/app-schema.ts";
-import BackendConnector from "@/lib/powersync/backend-connector.ts";
 
-const powerSync = new PowerSyncDatabase({
-  database: { dbFilename: "powersync.db" },
+const powerSync = new PowerSyncTauriDatabase({
   schema: AppSchema,
-  flags: {
-    // Web worker causes PowerSync engine fail to start (flaky behaviour).
-    // Learn more: https://github.com/romatallinn/powersync-tauri/issues/4
-    useWebWorker: false,
+  database: {
+    dbFilename: "powersync.db",
+    dbLocationAsync: appDataDir,
   },
 });
-const backend = new BackendConnector(env.POWERSYNC_URL, env.POWERSYNC_TOKEN);
 
 const PowerSyncProvider = ({ children }: { children: ReactNode }) => {
   const [db] = useState(powerSync);
-  const [connector] = useState(backend);
 
   useEffect(() => {
-    powerSync.init();
-    powerSync.connect(connector);
-  }, [connector]);
+    const setup = async () => {
+      await powerSync.init();
+      const handle = powerSync.rustHandle;
+      await invoke<void>("connect", {
+        handle,
+        powersyncUrl: env.POWERSYNC_URL,
+        powersyncToken: env.POWERSYNC_TOKEN,
+      });
+    };
+    setup();
+  }, []);
 
   return (
     <PowerSyncContext.Provider value={db}>{children}</PowerSyncContext.Provider>

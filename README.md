@@ -1,5 +1,8 @@
 # Tauri + Shadcn UI + PowerSync
 
+> [!NOTE]
+> This template now uses the [official PowerSync Tauri SDK](https://releases.powersync.com/announcements/introducing-the-powersync-tauri-sdk-alpha) (`@powersync/tauri-plugin`), replacing the previous WASM-based workaround. This brings native SQLite performance, reliable data persistence across app updates, and cross-window sync support. The backend connector now lives in Rust — see `src-tauri/src/main.rs`.
+
 This template should help get you started developing with [Vite](https://vitejs.dev), [Tauri](https://tauri.app), [React](https://reactjs.org), [Typescript](https://typescriptlang.org), [Shadcn UI](https://ui.shadcn.com), and [PowerSync](https://powersync.com).
 
 [PowerSync](https://powersync.com) is a sync layer for building local-first apps with simple state management and real-time reactivity.
