@@ -18,13 +18,13 @@ export default class BackendConnector implements PowerSyncBackendConnector {
   fetchCredentials() {
     // TODO: Use an authentication service or custom implementation here.
     if (this.powersyncToken == null || this.powersyncUrl == null) {
-      return null;
+      return Promise.resolve(null);
     }
 
-    return {
+    return Promise.resolve({
       endpoint: this.powersyncUrl,
       token: this.powersyncToken,
-    };
+    });
   }
 
   async uploadData(database: AbstractPowerSyncDatabase): Promise<void> {
