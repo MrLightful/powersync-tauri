@@ -19,7 +19,7 @@ tauri-plugin-process = "2"
 tauri-plugin-powersync = "0"
 powersync = "0"
 async-trait = "0.1"
-reqwest = { version = "0.12", features = ["json"] }
+reqwest = { version = "0.13", features = ["json"] }
 futures-lite = "2"
 log = "0.4"
 
