@@ -3252,34 +3252,6 @@ checksum = "439ee305def115ba05938db6eb1644ff94165c5ab5e9420d1c1bcedbba909391"
 
 [[package]]
 name = "powersync"
-version = "0.0.5"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e22f261466591a3f2aca3c33d5f50fe420a7d2357616f08724e98128bb381121"
-dependencies = [
- "async-channel 2.5.0",
- "async-lock",
- "async-oneshot",
- "async-trait",
- "atomic_enum",
- "bytes",
- "event-listener 5.4.1",
- "futures-lite 2.6.1",
- "log",
- "pin-project-lite",
- "powersync_core 0.4.11",
- "reqwest",
- "rusqlite",
- "scopeguard",
- "serde",
- "serde_json",
- "serde_with",
- "thiserror 2.0.18",
- "tokio",
- "url",
-]
-
-[[package]]
-name = "powersync"
 version = "0.0.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "5b9bb67309b849719cbb45cc749d109d841aae52831113c1706e1fa9b86cc8a2"
@@ -3295,14 +3267,16 @@ dependencies = [
  "log",
  "num-traits",
  "pin-project-lite",
- "powersync_core 0.5.2",
- "powersync_sqlite_nostd 0.5.2",
+ "powersync_core",
+ "powersync_sqlite_nostd",
+ "reqwest",
  "rusqlite",
  "scopeguard",
  "serde",
  "serde_json",
  "serde_with",
  "thiserror 2.0.18",
+ "tokio",
  "url",
 ]
 
@@ -3313,7 +3287,7 @@ dependencies = [
  "async-trait",
  "futures-lite 2.6.1",
  "log",
- "powersync 0.0.7",
+ "powersync",
  "reqwest",
  "serde",
  "serde_json",
@@ -3322,26 +3296,6 @@ dependencies = [
  "tauri-plugin-powersync",
  "tauri-plugin-process",
  "tauri-plugin-shell",
-]
-
-[[package]]
-name = "powersync_core"
-version = "0.4.11"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ea6becb46fb7b7328822ff3aad25dd537287772bfbc21052e978cb4e10f3014e"
-dependencies = [
- "bytes",
- "const_format",
- "futures-lite 2.6.1",
- "num-derive 0.3.3",
- "num-traits",
- "powersync_sqlite_nostd 0.4.11",
- "rustc-hash",
- "serde",
- "serde_json",
- "serde_with",
- "thiserror 2.0.18",
- "uuid",
 ]
 
 [[package]]
@@ -3355,24 +3309,13 @@ dependencies = [
  "futures-lite 2.6.1",
  "num-derive 0.3.3",
  "num-traits",
- "powersync_sqlite_nostd 0.5.2",
+ "powersync_sqlite_nostd",
  "rustc-hash",
  "serde",
  "serde_json",
  "serde_with",
  "thiserror 2.0.18",
  "uuid",
-]
-
-[[package]]
-name = "powersync_sqlite_nostd"
-version = "0.4.11"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1c9f1e5afe9c29d52a5e44550175eceb93b150067f05d97732bd65c57ef37827"
-dependencies = [
- "bindgen",
- "num-derive 0.4.2",
- "num-traits",
 ]
 
 [[package]]
@@ -4809,12 +4752,12 @@ dependencies = [
 
 [[package]]
 name = "tauri-plugin-powersync"
-version = "0.0.5"
+version = "0.0.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d555a36c4edb827b9dd0419e421fd52bf3b7d110c1f963d662b29e26ca08c548"
+checksum = "77a5727fada397c95d7c14098104c5a3d307b959436ddda62e8ada25ecb88d0b"
 dependencies = [
  "http-client",
- "powersync 0.0.5",
+ "powersync",
  "reqwest",
  "rusqlite",
  "serde",
